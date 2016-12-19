@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 19, 2016 11:21:02 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="hiber.TrainDetail" table="train_detail" catalog="mydb" optimistic-lock="version">
+        <id name="trainTravelId" type="int">
+            <column name="train_travelId" />
+            <generator class="assigned" />
+        </id>
+        <property name="departureDate" type="string">
+            <column name="departure_date" length="45" />
+        </property>
+        <property name="price" type="java.lang.Integer">
+            <column name="price" />
+        </property>
+        <property name="availableSeat" type="java.lang.Integer">
+            <column name="available_seat" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 19, 2016 11:21:02 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="hiber.Train" table="train" catalog="mydb" optimistic-lock="version">
+        <id name="trainTravelId" type="int">
+            <column name="train_travelId" />
+            <generator class="assigned" />
+        </id>
+        <property name="trainId" type="java.lang.Integer">
+            <column name="trainId" />
+        </property>
+        <property name="trainname" type="string">
+            <column name="trainname" length="45" />
+        </property>
+        <property name="fromLocation" type="string">
+            <column name="from_location" length="45" />
+        </property>
+        <property name="toLocation" type="string">
+            <column name="to_location" length="45" />
+        </property>
+        <property name="departureTime" type="string">
+            <column name="departure_time" length="45" />
+        </property>
+        <property name="arrivalTime" type="string">
+            <column name="arrival_time" length="45" />
+        </property>
+        <property name="duration" type="string">
+            <column name="duration" length="45" />
+        </property>
+        <property name="totalSeat" type="java.lang.Integer">
+            <column name="total_seat" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 19, 2016 11:21:02 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="hiber.Payment" table="payment" catalog="mydb" optimistic-lock="version">
+        <id name="paymentId" type="string">
+            <column name="paymentId" length="45" />
+            <generator class="assigned" />
+        </id>
+        <property name="ticketId" type="string">
+            <column name="ticketId" length="45" />
+        </property>
+        <property name="cardNumber" type="string">
+            <column name="card_number" length="16" not-null="true" />
+        </property>
+        <property name="cardName" type="string">
+            <column name="card_name" length="45" not-null="true" />
+        </property>
+        <property name="expMonth" type="string">
+            <column name="exp_month" length="2" not-null="true" />
+        </property>
+        <property name="expYear" type="string">
+            <column name="exp_year" length="4" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
