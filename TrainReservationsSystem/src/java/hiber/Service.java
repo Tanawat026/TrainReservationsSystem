@@ -69,6 +69,29 @@ public class Service extends HttpServlet {
         return passenger.size();
     }
 
+     public int getAllPayment() {
+        Session session = null;
+        Transaction tx = null;
+        List payment = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            tx = session.getTransaction();
+            tx.begin();
+            Query query = session.createQuery("from Payment");
+            payment = query.list();
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return payment.size();
+    }
+    
     public int getAllTicketinfo() {
         Session session = null;
         Transaction tx = null;
@@ -128,14 +151,14 @@ public class Service extends HttpServlet {
         return success;
     }
     
-    public boolean insertCarddetail(Payment carddetail) {
+    public boolean insertPaymentl(Payment payment) {
         boolean success = false;
         Session session = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             Transaction tx = session.getTransaction();
             tx.begin();
-            session.save(carddetail);
+            session.save(payment);
             tx.commit();
             success = true;
         } catch (Exception e) {

@@ -6,6 +6,7 @@
 package ticket;
 
 import hiber.Service;
+import hiber.Ticketinfo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -41,7 +42,7 @@ public class TicketWaittingController extends HttpServlet {
             //Data for Ticketinfo
             int psgId = Integer.parseInt(request.getParameter("psgId"));
             int trainTravelId = Integer.parseInt(request.getParameter("trainTravelId"));
-            String departuredate = request.getParameter("departuredate");
+            String departureDate = request.getParameter("departuredate");
             String status = "Waittng";
             int psgQuantity = 1;
             int price = Integer.parseInt(request.getParameter("price"));
@@ -54,14 +55,12 @@ public class TicketWaittingController extends HttpServlet {
             String availableseat = request.getParameter("availableseat");
              Service service = new Service();
             int ticketId = service.getAllTicketinfo() + 1;
+            out.println("----------------------------------"+ticketId+"------------------------------------");
             //Session for TicketInfo
-            session.setAttribute("ticketId", ticketId);
-            session.setAttribute("psgId", psgId);
-            session.setAttribute("trainTravelId", trainTravelId);
-            session.setAttribute("departuredate", departuredate);
-            session.setAttribute("status", status);
-            session.setAttribute("psgQuantity", psgQuantity);
-            session.setAttribute("price", price);
+            Ticketinfo tinfo = new Ticketinfo(ticketId,psgId,trainTravelId,departureDate, status,psgQuantity,price);
+          
+            session.setAttribute("ticketinfo", tinfo);
+           
             //Session for Show TicketDetail
             session.setAttribute("trainname", trainname);
             session.setAttribute("fromlocation", fromlocation);

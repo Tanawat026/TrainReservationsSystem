@@ -5,13 +5,18 @@
  */
 package ticket;
 
+import hiber.Payment;
+import hiber.Service;
+import hiber.Ticketinfo;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -33,16 +38,38 @@ public class TicketAddController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet TicketAddController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet TicketAddController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            HttpSession session = request.getSession(true);
+            Service service = new Service();
+            int ticketID = service.getAllTicketinfo() + 1;
+            int psgId = Integer.parseInt(request.getParameter("psgId"));
+            int trainTravelId = Integer.parseInt(request.getParameter("trainTravelId"));
+            String departureDate = request.getParameter("departuredate");
+            String status = "Seccess ..";
+            int psgQuantity = 1;
+            int price = Integer.parseInt(request.getParameter("priceall"));
+           
+            //Data for Payment
+            String paymentid = (service.getAllPayment()+1)+"";
+            String ticketId = service.getAllTicketinfo() + 1+"";
+            String cardname = request.getParameter("cardname");
+            String cardnumber = request.getParameter("cardnumber");
+            String expmonth = request.getParameter("expmonth");
+            String expyear = request.getParameter("expyear");
+            
+            System.out.println("TicketID : "+ticketID+"Psg ID: "+psgId+"Traintralvel ID :"+trainTravelId+" ---- "+departureDate+status+psgQuantity+price+"<-------------------------------------");
+            System.out.println(paymentid+ticketId+cardname+cardnumber+expmonth+expyear+"<-------------------------------------");
+            //insert ticketinfo 
+            Ticketinfo ticketinfo = new Ticketinfo(ticketID, psgId, trainTravelId, departureDate, status, psgQuantity, price);
+            boolean saved = service.insertTicketInfo(ticketinfo);
+            out.println(saved);
+            //insert payment
+            Payment payment = new Payment(paymentid,ticketId,cardname,cardnumber,expmonth,expyear);
+            boolean saved2 = service.insertPaymentl(payment);
+           // out.println(saved2);
+            
+            RequestDispatcher rd = request.getRequestDispatcher("Home.jsp");
+            rd.forward(request, response);
+            
         }
     }
 
