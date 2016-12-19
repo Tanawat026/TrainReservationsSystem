@@ -21,16 +21,16 @@
         <title>Train Reservations</title>
     </head>
     <body><center>
-       <nav class="navbar navbar-inverse"> 
-           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-           <li> <a   href="Home.jsp">Home</a> </li>
-           <li> <a  href="AddCreditCard.jsp">Profile</a> </li>
-           <li> <a  href="AddCreditCard.jsp">History Ticket</a> </li>
-           <li> <a  href="AddCreditCard.jsp">Log out</a> </li>
-      </ul>
-           </div>
-       </nav>    
+        <nav class="navbar navbar-inverse"> 
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li> <a  class="navbar-brand" href="Home.jsp">Train Reservations</a> </li>
+                    <li> <a  href="ProfilePage.jsp">Profile</a> </li>
+                    <li> <a  href="AddCreditCard.jsp">History Ticket</a> </li>
+                    <li> <a  href="LogoutController">Sign out</a> </li>
+                </ul>
+            </div>
+        </nav>    
         <h1>Phuket Trains</h1>
         จองตั๋วรถไฟ <br><br>
         (คุณสามารถขึ้นที่สถานีใดก็ได้ภายในจังหวัดนั้น) <br><br>

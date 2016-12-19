@@ -19,29 +19,27 @@
     <body>
         <nav class="navbar navbar-inverse"> 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <a class="navbar-brand" href="#">Train Reservations</a>
                 <ul class="nav navbar-nav">
-                    <li> <a   href="Home.jsp">Home</a> </li>
+                    <li> 
+                        <form class="navbar-form navbar-right" method="POST" action="LoginController">
+                            <div class="form-group">
+                                <label class="sr-only">Email address</label>
+                                <input type="text" class="form-control" name="username" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only">Password</label>
+                                <input type="password" name="password" class="form-control" placeholder="Password">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Sign in</button>
+                        </form>
+                        </li>
                 </ul>
             </div>
         </nav>
     <center>
-         <title>Train Reservations</title>
-         <h1>Train Reservations</h1>
-        จองตั๋วรถไฟ <br><br>
-        (คุณสามารถขึ้นที่สถานีใดก็ได้ภายในจังหวัดนั้น) <br><br>
-        <form class="form-inline" method="POST" action="LoginController">
-            <div class="form-group">
-                <label class="sr-only">Email address</label>
-                <input type="text" class="form-control" name="username" placeholder="Email">
-            </div>
-            <div class="form-group">
-                <label class="sr-only">Password</label>
-                <input type="password" name="password" class="form-control" placeholder="Password">
-            </div>
-
-            <button type="submit" class="btn btn-primary">Sign in</button>
-        </form>
-
+        <title>Train Reservations</title>
         <%
             try {
                 String message = request.getParameter("message");
@@ -55,6 +53,9 @@
         <%
             }
         %>
+        <h1>Train Reservations</h1>
+        จองตั๋วรถไฟ <br><br>
+        (คุณสามารถขึ้นที่สถานีใดก็ได้ภายในจังหวัดนั้น) <br><br>
         <h1>Register</h1>
         <form class="form-inline" method="POST" action="RegisterController">
             <input type="text" class="form-control" name="firstname" placeholder="Firstname"> &nbsp;&nbsp;&nbsp;            
@@ -103,5 +104,5 @@
             <button type="submit" class="btn btn-success">Register</button>
         </form>
     </cancle>
-    </body>
+</body>
 </html>

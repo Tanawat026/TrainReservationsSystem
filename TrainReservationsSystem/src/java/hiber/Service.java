@@ -23,7 +23,8 @@ import org.hibernate.Transaction;
  */
 @WebServlet(name = "Service", urlPatterns = {"/Service"})
 public class Service extends HttpServlet {
- public List getAuthentication(String username, String password) {
+
+    public List getAuthentication(String username, String password) {
         Session session = null;
         Transaction tx = null;
         List passenger = null;
@@ -45,7 +46,92 @@ public class Service extends HttpServlet {
 
         return passenger;
     }
+    
+    public boolean updatePasswordPassenger(Passenger passenger) {
+        Session session = null;
+        Transaction tx = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            tx = session.getTransaction();
+            tx.begin();
+            String hql = "UPDATE Passenger set password = :pass WHERE psgId ="+passenger.getPsgId();
+            System.out.println(hql);
+            Query query = session.createQuery(hql);
+            query.setParameter("pass", passenger.getPassword());
+            //query.setParameter("passenger_id", passenger.getPsgId());
+            int result = query.executeUpdate();
+            if(result==1){
+                System.out.println("true");  
+            }
+            tx.commit();
+            return true;
+        } catch (Exception e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+            e.printStackTrace();
+            return false;
+        } finally {
+            session.close();
+        }
+    }
+    
+    public boolean updatePassenger(Passenger passenger) {
+        Session session = null;
+        Transaction tx = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            tx = session.getTransaction();
+            tx.begin();
+            String hql = "UPDATE Passenger set firstname = :fname, lastname = :lname, email = :mail, telNo = :tel "
+                    + "WHERE psgId ="+passenger.getPsgId();
+            System.out.println(hql);
+            Query query = session.createQuery(hql);
+            query.setParameter("fname", passenger.getFirstname());
+            query.setParameter("lname", passenger.getLastname());
+            query.setParameter("mail", passenger.getEmail());
+            query.setParameter("tel", passenger.getTelNo());
+            //query.setParameter("passenger_id", passenger.getPsgId());
+            int result = query.executeUpdate();
+            if(result==1){
+                System.out.println("true");  
+            }
+            tx.commit();
+            return true;
+        } catch (Exception e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+            e.printStackTrace();
+            return false;
+        } finally {
+            session.close();
+        }
+    }
+    
+    public List getPassengerByID(int id) {
+        Session session = null;
+        Transaction tx = null;
+        List passenger = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            tx = session.getTransaction();
+            tx.begin();
+            Query query = session.createQuery("from Passenger where psgId ="+id);
+            passenger = query.list();
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
 
+        return passenger;
+    }
+    
     public int getAllPassenger() {
         Session session = null;
         Transaction tx = null;
@@ -69,7 +155,7 @@ public class Service extends HttpServlet {
         return passenger.size();
     }
 
-     public int getAllPayment() {
+    public int getAllPayment() {
         Session session = null;
         Transaction tx = null;
         List payment = null;
@@ -91,7 +177,7 @@ public class Service extends HttpServlet {
 
         return payment.size();
     }
-    
+
     public int getAllTicketinfo() {
         Session session = null;
         Transaction tx = null;
@@ -114,7 +200,7 @@ public class Service extends HttpServlet {
 
         return ticketinfo.size();
     }
-    
+
     public boolean insertPassenger(Passenger passenger) {
         boolean success = false;
         Session session = null;
@@ -150,7 +236,7 @@ public class Service extends HttpServlet {
         }
         return success;
     }
-    
+
     public boolean insertPaymentl(Payment payment) {
         boolean success = false;
         Session session = null;
@@ -168,7 +254,7 @@ public class Service extends HttpServlet {
         }
         return success;
     }
-    
+
     public List searchTrainTravel(String search_ticketfrom, String search_ticketto) {
         String message = null;
         Session session = null;
@@ -193,7 +279,7 @@ public class Service extends HttpServlet {
         }
         return searchtrainList;
     }
- 
+
     public void TicketUpdate(int trainid, String status) {
         String message = null;
         Session session = null;
@@ -215,6 +301,7 @@ public class Service extends HttpServlet {
             session.close();
         }
     }
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -223,7 +310,7 @@ public class Service extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Service</title>");            
+            out.println("<title>Servlet Service</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet Service at " + request.getContextPath() + "</h1>");
