@@ -25,7 +25,9 @@
            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
            <li> <a   href="Home.jsp">Home</a> </li>
-           <li>   <a  href="AddCreditCard.jsp">Payment</a> </li>
+           <li> <a  href="AddCreditCard.jsp">Profile</a> </li>
+           <li> <a  href="AddCreditCard.jsp">History Ticket</a> </li>
+           <li> <a  href="AddCreditCard.jsp">Log out</a> </li>
       </ul>
            </div>
        </nav>    
@@ -79,7 +81,7 @@
                     <td>ราคา(บาท)</td>
                     <td>จอง</td>
                 </tr>
-            <form name = "ReservationsTicket" action="TicketAddController" method="GET">
+            <form name = "ReservationsTicket" action="TicketWaittingController" method="GET">
                 <% 
 
                     for (Object[] obj : trainSearchList) {

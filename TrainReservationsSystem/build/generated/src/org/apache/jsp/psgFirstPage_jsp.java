@@ -56,6 +56,18 @@ public final class psgFirstPage_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("        <title>Train ticket</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
+      out.write("        <nav class=\"navbar navbar-inverse\"> \n");
+      out.write("            <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n");
+      out.write("                <ul class=\"nav navbar-nav\">\n");
+      out.write("                    <li> <a   href=\"Home.jsp\">Home</a> </li>\n");
+      out.write("                </ul>\n");
+      out.write("            </div>\n");
+      out.write("        </nav>\n");
+      out.write("    <center>\n");
+      out.write("         <title>Train Reservations</title>\n");
+      out.write("         <h1>Phuket Trains</h1>\n");
+      out.write("        จองตั๋วรถไฟ <br><br>\n");
+      out.write("        (คุณสามารถขึ้นที่สถานีใดก็ได้ภายในจังหวัดนั้น) <br><br>\n");
       out.write("        <form class=\"form-inline\" method=\"POST\" action=\"LoginController\">\n");
       out.write("            <div class=\"form-group\">\n");
       out.write("                <label class=\"sr-only\">Email address</label>\n");
@@ -147,6 +159,7 @@ public final class psgFirstPage_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\n");
       out.write("            <button type=\"submit\" class=\"btn btn-success\">Register</button>\n");
       out.write("        </form>\n");
+      out.write("    </cancle>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

@@ -17,6 +17,18 @@
         <title>Train ticket</title>
     </head>
     <body>
+        <nav class="navbar navbar-inverse"> 
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li> <a   href="Home.jsp">Home</a> </li>
+                </ul>
+            </div>
+        </nav>
+    <center>
+         <title>Train Reservations</title>
+         <h1>Train Reservations</h1>
+        จองตั๋วรถไฟ <br><br>
+        (คุณสามารถขึ้นที่สถานีใดก็ได้ภายในจังหวัดนั้น) <br><br>
         <form class="form-inline" method="POST" action="LoginController">
             <div class="form-group">
                 <label class="sr-only">Email address</label>
@@ -90,5 +102,6 @@
             %>
             <button type="submit" class="btn btn-success">Register</button>
         </form>
+    </cancle>
     </body>
 </html>
