@@ -201,6 +201,29 @@ public class Service extends HttpServlet {
         return ticketinfo.size();
     }
 
+    public List getAllTicketinfoByPassengerID(int id) {
+        Session session = null;
+        Transaction tx = null;
+        List ticketinfo = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            tx = session.getTransaction();
+            tx.begin();
+            String hql= "from Ticketinfo I, Train T where  T.trainTravelId = I.trainTravelId and I.psgId ="+id;
+            Query query = session.createQuery(hql);
+            ticketinfo = query.list();
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return ticketinfo;
+    }
+    
     public boolean insertPassenger(Passenger passenger) {
         boolean success = false;
         Session session = null;

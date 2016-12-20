@@ -11,7 +11,7 @@
 <%@page import="hiber.Train"%>
 <%@page import="hiber.TrainDetail"%>
 <html>
-    
+
     <head>
 
         <link href="dist/css/bootstrap.min.css" rel="stylesheet">
@@ -22,32 +22,28 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Train Reservations</title>
     </head>
-    <body><center>
-        
-        
-         <BODY background="images/tt1.jpg"></BODY>
-        
-        
+    <body>
+    <center>
+        <BODY background="images/tt1.jpg"></BODY>
         <nav class="navbar navbar-inverse"> 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li> <a  class="navbar-brand" href="Home.jsp">Train Reservations</a> </li>
                     <li> <a  href="ProfilePage.jsp">Profile</a> </li>
-                    <li> <a  href="AddCreditCard.jsp">History Ticket</a> </li>
-                    <li> <a  href="LogoutController">Sign out</a> </li>
+                    <li> <a  href="TicketHistoryController" >History Ticket</a> </li>
                 </ul>
+                <p class="navbar-text navbar-right"><a  href="LogoutController" >Sign out</a> &nbsp;&nbsp;&nbsp;</p>
             </div>
         </nav>   
-         
-         <br>
-         <font color="white"><h1>Phuket Trains</h1></font>
-         
-         
+        <br>
+        <font color="white"><h1>Phuket Trains</h1></font>
+
+
         <font color="white">จองตั๋วรถไฟ <br><br></font>
-        
+
         <font color="white">(คุณสามารถขึ้นที่สถานีใดก็ได้ภายในจังหวัดนั้น) <br><br></font>
-        
-        
+
+
         <form name="SearchTicket" action="TrainSearchController" class="form-inline" >
             <font color="white">สถานีต้นทาง</font> 
             <select class="form-control" name ="TrainFrom">
@@ -59,7 +55,7 @@
                 <option value="Ranong">Ranong</option>
                 <option value="Phang-nga">Phang-nga</option>
             </select>&nbsp;&nbsp;&nbsp;
-             <font color="white">สถานีปลายทาง</font>
+            <font color="white">สถานีปลายทาง</font>
             <select class="form-control" name ="TrainTo">
                 <option selected disabled>เลือกปลายทาง</option>
                 <option value="Phuket">Phuket</option>
@@ -82,8 +78,7 @@
                 }
                 if (trainSearchList != null) {
         %>
-        <table class="table table-bordered" > <% //border="1" %>
-            <tbody>
+        <table class="table table-bordered" >
                 <tr>
                     <td >ชื่อรถไฟ</td>
                     <td>สถานีต้นทาง</td>
@@ -91,34 +86,39 @@
                     <td>วันที่ออก</td>
                     <td>เวลาออก</td> 
                     <td>เวลาถึง</td>
-                    
                     <td>ราคา(บาท)</td>
                     <td>จอง</td>
                 </tr>
-            <form name = "ReservationsTicket" action="TicketWaittingController" method="GET" class="form-inline">
+            
                 <% 
 
                     for (Object[] obj : trainSearchList) {
                         Train train = (Train) obj[0];
                         TrainDetail traindetail = (TrainDetail) obj[1];
                 %> 
-
                 <tr>
+                <form action="TicketWaittingController" method="POST" class="form-inline" >
                 <input type="text" name="psgId" value ="<%= passenger.getPsgId()%>" hidden>
                 <input type="text" name="trainid" value ="<%= traindetail.getTrainTravelId()%>" hidden>
                 <input type="text" name="trainTravelId" value ="<%= traindetail.getTrainTravelId()%>" hidden>
-                <td ><input type = "text" class="form-control" name = "trainname" value="<% out.println(train.getTrainname()); %>" readonly</td>
-                <td><input type = "text" class="form-control" name = "fromlocation" value="<% out.println(train.getFromLocation()); %>" readonly</td>
-                <td><input type = "text" class="form-control" name = "tolocation" value="<% out.println(train.getToLocation()); %>" readonly</td>
-                <td><input type = "text" class="form-control" name = "departuredate" value="<% out.println(traindetail.getDepartureDate()); %>" readonly</td>
-                <td><input type = "text" class="form-control" name = "departuretime" value="<% out.println(train.getDepartureTime()); %>" readonly</td>
-                <td><input type = "text" class="form-control" name = "arrivaltime" value="<% out.println(train.getArrivalTime()); %>" readonly</td>
-                <td><input type = "text" class="form-control" name = "price" value="<% out.println(traindetail.getPrice()); %>" readonly</td>
-                <td><input type ="submit" class="btn btn-primary" name ="submit" value = "จองตั๋วโดยสาร"></td>
-                </tr>
+                <input type = "text"  name = "trainname" value="<%= train.getTrainname() %>" hidden>
+                <input type = "text"  name = "fromlocation" value="<%= train.getFromLocation() %>" hidden>
+                <input type = "text"  name = "tolocation" value="<%= train.getToLocation() %>" hidden>
+                <input type = "text"  name = "departuredate" value="<%= traindetail.getDepartureDate() %>" hidden>
+                <input type = "text"  name = "departuretime" value="<%= train.getDepartureTime() %>" hidden>
+                <input type = "text"  name = "arrivaltime" value="<%= train.getArrivalTime() %>" hidden>
+                <input type = "text"  name = "price" value="<%= traindetail.getPrice() %>" hidden>
+                <td ><% out.println(train.getTrainname()); %></td>
+                <td><% out.println(train.getFromLocation()); %></td>
+                <td><% out.println(train.getToLocation()); %></td>
+                <td><% out.println(traindetail.getDepartureDate()); %></td>
+                <td><% out.println(train.getDepartureTime()); %></td>
+                <td><% out.println(train.getArrivalTime()); %></td>
+                <td><% out.println(traindetail.getPrice()); %></td>
+                <td><input type ="submit" class="btn btn-primary" name ="submit" value = "จองตั๋วโดยสาร"></td>   
             </form>
+            </tr>
             <%}%>
-            </tbody>
         </table>
         <% }
             } catch (Exception e) {

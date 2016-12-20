@@ -17,31 +17,25 @@
         <title>Train ticket</title>
     </head>
     <body>
-        
-        <BODY background="images/t4.jpg"></BODY>
-        
-        <nav class="navbar navbar-inverse"> 
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <a  class="navbar-brand"  href="#">Train Reservations</a> 
-                
-                <ul class="nav navbar-nav">
-                    <li> 
-                        <form class="navbar-form navbar-right" method="POST" action="LoginController">
-                            <div class="form-group">
-                                <label class="sr-only">Email address</label>
-                                <input type="text" class="form-control" name="username" placeholder="Email">
-                            </div>
-                            <div class="form-group">
-                                <label class="sr-only">Password</label>
-                                <input type="password" name="password" class="form-control" placeholder="Password">
-                            </div>
 
-                            <button type="submit" class="btn btn-primary">Sign in</button>
-                        </form>
-                        </li>
-                </ul>
-            </div>
-        </nav>
+    <BODY background="images/t4.jpg"></BODY>
+
+    <nav class="navbar navbar-inverse"> 
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <a  class="navbar-brand"  href="#">Train Reservations</a>       
+            <form class="navbar-form navbar-right" method="POST" action="LoginController">
+                <div class="form-group">
+                    <label class="sr-only">Email address</label>
+                    <input type="text" class="form-control" name="username" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only">Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary navbar-btn">Sign in</button>
+            </form>             
+        </div>
+    </nav>
     <center>
         <title>Train Reservations</title>
         <%
@@ -58,8 +52,8 @@
             }
         %>
         <font color="white"><h1>Train Reservations</h1> </font>
-        
-       <font color="white">จองตั๋วรถไฟ <br><br></font> 
+
+        <font color="white">จองตั๋วรถไฟ <br><br></font> 
         <font color="white">(คุณสามารถขึ้นที่สถานีใดก็ได้ภายในจังหวัดนั้น) <br><br></font>
         <font color="#3371FF"><h1>Register</h1></font>
         <form class="form-inline" method="POST" action="RegisterController">

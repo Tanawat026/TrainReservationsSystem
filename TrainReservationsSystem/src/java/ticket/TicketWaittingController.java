@@ -52,7 +52,7 @@ public class TicketWaittingController extends HttpServlet {
             String tolocation = request.getParameter("tolocation");
             String departuretime = request.getParameter("departuretime");
             String arrivaltime = request.getParameter("arrivaltime");
-             Service service = new Service();
+            Service service = new Service();
             int ticketId = service.getAllTicketinfo() + 1;
             //out.println("----------------------------------"+ticketId+"------------------------------------");
             //Session for TicketInfo

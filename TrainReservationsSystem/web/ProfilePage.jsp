@@ -19,18 +19,16 @@
         <title>JSP Page</title>
     </head>
     <body> <center>
-        
+
         <BODY background="images/tt.jpg"></BODY>
-        
-        
         <nav class="navbar navbar-inverse"> 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li> <a  class="navbar-brand" href="Home.jsp">Train Reservations</a> </li>
                     <li> <a  href="ProfilePage.jsp">Profile</a> </li>
-                    <li> <a  href="AddCreditCard.jsp">History Ticket</a> </li>
-                    <li> <a  href="LogoutController">Sign out</a> </li>
+                    <li> <a  href="TicketHistoryController" >History Ticket</a> </li>
                 </ul>
+                <p class="navbar-text navbar-right"><a  href="LogoutController" >Sign out</a> &nbsp;&nbsp;&nbsp;</p>
             </div>
         </nav>   
         <%
@@ -46,23 +44,23 @@
                 if (requestChange == null) {
         %>
         <font color="white"><br><br> <h1>My Profile</h1></font>
-        
+
         <form method="GET" action="RequestEditAccountControl" class="form-inline">
             <table border ="0">
                 <tr>
-                    
-             <td><font color="white">Firstname </font></td><td><input class="form-control" type="text" value="<%= passenger.getFirstname()%>" readonly></td>
+
+                    <td><font color="white">Firstname </font></td><td><input class="form-control" type="text" value="<%= passenger.getFirstname()%>" readonly></td>
                 </tr>
                 <tr>
-                    
-             <td><font color="white">Lastname</font></td><td><input class="form-control" type="text" value="<%= passenger.getLastname()%>" readonly></td>
+
+                    <td><font color="white">Lastname</font></td><td><input class="form-control" type="text" value="<%= passenger.getLastname()%>" readonly></td>
                 </tr>
                 <tr>
-                    
+
                     <td><font color="white">Email</font></td><td> <input class="form-control" type="text" value="<%= passenger.getEmail()%>" readonly></td>
                 </tr>
                 <tr>
-                    
+
                     <td><font color="white">Telephone</font></td><td> <input class="form-control" type="text" value="<%= passenger.getTelNo()%>" readonly></td>
                 </tr>
             </table>
@@ -112,7 +110,7 @@
         } else if (requestChange.equals("C!2ng99wd")) {
         %>
         <font color="white"><h1>Change My Password</h1> </font> 
-        
+
         <form method="POST" action="ChangePwdController" class="form-inline">
             <input type="text" name="id" value="<%= passenger.getPsgId()%>" hidden>
             <table border="0">
@@ -149,6 +147,6 @@
 
             }
         %>
-        </center>
-    </body>
+    </center>
+</body>
 </html>
