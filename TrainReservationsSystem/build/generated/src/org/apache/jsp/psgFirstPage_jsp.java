@@ -41,113 +41,119 @@ public final class psgFirstPage_jsp extends org.apache.jasper.runtime.HttpJspBas
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <link href=\"dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n");
-      out.write("        <link href=\"dist/css/bootstrap-theme.min.css\" rel=\"stylesheet\">\n");
-      out.write("        <link href=\"assets/css/ie10-viewport-bug-workaround.css\" rel=\"stylesheet\">\n");
-      out.write("        <link href=\"theme.css\" rel=\"stylesheet\">\n");
-      out.write("        <script src=\"assets/js/ie-emulation-modes-warning.js\"></script>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Train ticket</title>\n");
-      out.write("    </head>\n");
-      out.write("    <body>\n");
-      out.write("        <nav class=\"navbar navbar-inverse\"> \n");
-      out.write("            <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n");
-      out.write("                <ul class=\"nav navbar-nav\">\n");
-      out.write("                    <li> <a   href=\"Home.jsp\">Home</a> </li>\n");
-      out.write("                </ul>\n");
-      out.write("            </div>\n");
-      out.write("        </nav>\n");
-      out.write("    <center>\n");
-      out.write("         <title>Train Reservations</title>\n");
-      out.write("         <h1>Phuket Trains</h1>\n");
-      out.write("        จองตั๋วรถไฟ <br><br>\n");
-      out.write("        (คุณสามารถขึ้นที่สถานีใดก็ได้ภายในจังหวัดนั้น) <br><br>\n");
-      out.write("        <form class=\"form-inline\" method=\"POST\" action=\"LoginController\">\n");
-      out.write("            <div class=\"form-group\">\n");
-      out.write("                <label class=\"sr-only\">Email address</label>\n");
-      out.write("                <input type=\"text\" class=\"form-control\" name=\"username\" placeholder=\"Email\">\n");
-      out.write("            </div>\n");
-      out.write("            <div class=\"form-group\">\n");
-      out.write("                <label class=\"sr-only\">Password</label>\n");
-      out.write("                <input type=\"password\" name=\"password\" class=\"form-control\" placeholder=\"Password\">\n");
-      out.write("            </div>\n");
-      out.write("\n");
-      out.write("            <button type=\"submit\" class=\"btn btn-primary\">Sign in</button>\n");
-      out.write("        </form>\n");
-      out.write("\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <link href=\"dist/css/bootstrap.min.css\" rel=\"stylesheet\">\r\n");
+      out.write("        <link href=\"dist/css/bootstrap-theme.min.css\" rel=\"stylesheet\">\r\n");
+      out.write("        <link href=\"assets/css/ie10-viewport-bug-workaround.css\" rel=\"stylesheet\">\r\n");
+      out.write("        <link href=\"theme.css\" rel=\"stylesheet\">\r\n");
+      out.write("        <script src=\"assets/js/ie-emulation-modes-warning.js\"></script>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <title>Train ticket</title>\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>\r\n");
+      out.write("        \r\n");
+      out.write("        <BODY background=\"images/t4.jpg\"></BODY>\r\n");
+      out.write("        \r\n");
+      out.write("        <nav class=\"navbar navbar-inverse\"> \r\n");
+      out.write("            <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\r\n");
+      out.write("                <a  class=\"navbar-brand\"  href=\"#\">Train Reservations</a> \r\n");
+      out.write("                \r\n");
+      out.write("                <ul class=\"nav navbar-nav\">\r\n");
+      out.write("                    <li> \r\n");
+      out.write("                        <form class=\"navbar-form navbar-right\" method=\"POST\" action=\"LoginController\">\r\n");
+      out.write("                            <div class=\"form-group\">\r\n");
+      out.write("                                <label class=\"sr-only\">Email address</label>\r\n");
+      out.write("                                <input type=\"text\" class=\"form-control\" name=\"username\" placeholder=\"Email\">\r\n");
+      out.write("                            </div>\r\n");
+      out.write("                            <div class=\"form-group\">\r\n");
+      out.write("                                <label class=\"sr-only\">Password</label>\r\n");
+      out.write("                                <input type=\"password\" name=\"password\" class=\"form-control\" placeholder=\"Password\">\r\n");
+      out.write("                            </div>\r\n");
+      out.write("\r\n");
+      out.write("                            <button type=\"submit\" class=\"btn btn-primary\">Sign in</button>\r\n");
+      out.write("                        </form>\r\n");
+      out.write("                        </li>\r\n");
+      out.write("                </ul>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </nav>\r\n");
+      out.write("    <center>\r\n");
+      out.write("        <title>Train Reservations</title>\r\n");
       out.write("        ");
 
             try {
                 String message = request.getParameter("message");
                 if (message != null) {
         
-      out.write("\n");
-      out.write("        <div class=\"alert alert-danger\" role=\"alert\">\n");
-      out.write("            <span class=\"glyphicon glyphicon-exclamation-sign\" aria-hidden=\"true\"></span>\n");
-      out.write("            <span class=\"sr-only\">Error:</span>\n");
-      out.write("            Enter a valid email address or password\n");
-      out.write("        </div>\n");
+      out.write("\r\n");
+      out.write("        <div class=\"alert alert-danger\" role=\"alert\">\r\n");
+      out.write("            <span class=\"glyphicon glyphicon-exclamation-sign\" aria-hidden=\"true\"></span>\r\n");
+      out.write("            <span class=\"sr-only\">Error:</span>\r\n");
+      out.write("            Enter a valid email address or password\r\n");
+      out.write("        </div>\r\n");
       out.write("        ");
 
             }
         
-      out.write("\n");
-      out.write("        <h1>Register</h1>\n");
-      out.write("        <form class=\"form-inline\" method=\"POST\" action=\"RegisterController\">\n");
-      out.write("            <input type=\"text\" class=\"form-control\" name=\"firstname\" placeholder=\"Firstname\"> &nbsp;&nbsp;&nbsp;            \n");
-      out.write("            <input type=\"text\" class=\"form-control\" name=\"lastname\" placeholder=\"Lastname\"><br><br> \n");
-      out.write("            <input type=\"email\" class=\"form-control\" name=\"email\" placeholder=\"Email\"><br><br>            \n");
-      out.write("            <input type=\"password\" class=\"form-control\" name=\"password\" placeholder=\"Password\"><br><br>\n");
-      out.write("            <input type=\"password\" class=\"form-control\" name=\"repassword\" placeholder=\"Confirm password\"><br><br> \n");
-      out.write("            <input type=\"text\" class=\"form-control\" name=\"tel\" placeholder=\"Telephone\"><br><br>\n");
+      out.write("\r\n");
+      out.write("        <font color=\"white\"><h1>Train Reservations</h1> </font>\r\n");
+      out.write("        \r\n");
+      out.write("       <font color=\"white\">จองตั๋วรถไฟ <br><br></font> \r\n");
+      out.write("        <font color=\"white\">(คุณสามารถขึ้นที่สถานีใดก็ได้ภายในจังหวัดนั้น) <br><br></font>\r\n");
+      out.write("        <font color=\"#3371FF\"><h1>Register</h1></font>\r\n");
+      out.write("        <form class=\"form-inline\" method=\"POST\" action=\"RegisterController\">\r\n");
+      out.write("            <input type=\"text\" class=\"form-control\" name=\"firstname\" placeholder=\"Firstname\"> &nbsp;&nbsp;&nbsp;            \r\n");
+      out.write("            <input type=\"text\" class=\"form-control\" name=\"lastname\" placeholder=\"Lastname\"><br><br> \r\n");
+      out.write("            <input type=\"email\" class=\"form-control\" name=\"email\" placeholder=\"Email\"><br><br>            \r\n");
+      out.write("            <input type=\"password\" class=\"form-control\" name=\"password\" placeholder=\"Password\"><br><br>\r\n");
+      out.write("            <input type=\"password\" class=\"form-control\" name=\"repassword\" placeholder=\"Confirm password\"><br><br> \r\n");
+      out.write("            <input type=\"text\" class=\"form-control\" name=\"tel\" placeholder=\"Telephone\"><br><br>\r\n");
       out.write("            ");
 
                 String check = request.getParameter("check");
                 if (check != null) {
             
-      out.write("\n");
-      out.write("            <span class=\"label label-danger\">Password not match!!</span>\n");
-      out.write("            <br><br>\n");
+      out.write("\r\n");
+      out.write("            <span class=\"label label-danger\">Password not match!!</span>\r\n");
+      out.write("            <br><br>\r\n");
       out.write("            ");
 
                 }
             
-      out.write("\n");
+      out.write("\r\n");
       out.write("            ");
 
                 String data = request.getParameter("data");
                 if (data != null) {
             
-      out.write(" \n");
-      out.write("            <span class=\"label label-danger\">All data require!!!</span>\n");
-      out.write("            <br><br>\n");
+      out.write(" \r\n");
+      out.write("            <span class=\"label label-danger\">All data require!!!</span>\r\n");
+      out.write("            <br><br>\r\n");
       out.write("            ");
 
                 }
             
-      out.write("\n");
+      out.write("\r\n");
       out.write("            ");
 
                 String save = request.getParameter("save");
                 if (save != null) {
                     if (save.equals("yes")) {
             
-      out.write("\n");
-      out.write("            <span class=\"label label-success\">Now you can login</span>\n");
-      out.write("            <br><br>\n");
+      out.write("\r\n");
+      out.write("            <span class=\"label label-success\">Now you can login</span>\r\n");
+      out.write("            <br><br>\r\n");
       out.write("            ");
 
             } else {
             
-      out.write("\n");
-      out.write("            <span class=\"label label-danger\">Please try again</span>\n");
-      out.write("            <br><br>\n");
+      out.write("\r\n");
+      out.write("            <span class=\"label label-danger\">Please try again</span>\r\n");
+      out.write("            <br><br>\r\n");
       out.write("            ");
 
                         }
@@ -156,12 +162,12 @@ public final class psgFirstPage_jsp extends org.apache.jasper.runtime.HttpJspBas
                     e.printStackTrace();
                 }
             
-      out.write("\n");
-      out.write("            <button type=\"submit\" class=\"btn btn-success\">Register</button>\n");
-      out.write("        </form>\n");
-      out.write("    </cancle>\n");
-      out.write("    </body>\n");
-      out.write("</html>\n");
+      out.write("\r\n");
+      out.write("            <button type=\"submit\" class=\"btn btn-success\">Register</button>\r\n");
+      out.write("        </form>\r\n");
+      out.write("    </cancle>\r\n");
+      out.write("</body>\r\n");
+      out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

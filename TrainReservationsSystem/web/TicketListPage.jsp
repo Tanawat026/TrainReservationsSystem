@@ -12,6 +12,8 @@
         <title>History Ticket</title>
     </head>
     <body>
-        <h1>Your Ticket</h1>
+        <%
+            
+        %>
     </body>
 </html>

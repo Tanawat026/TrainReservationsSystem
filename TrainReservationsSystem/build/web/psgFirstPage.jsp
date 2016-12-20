@@ -17,9 +17,13 @@
         <title>Train ticket</title>
     </head>
     <body>
+        
+        <BODY background="images/t4.jpg"></BODY>
+        
         <nav class="navbar navbar-inverse"> 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <a class="navbar-brand" href="#">Train Reservations</a>
+                <a  class="navbar-brand"  href="#">Train Reservations</a> 
+                
                 <ul class="nav navbar-nav">
                     <li> 
                         <form class="navbar-form navbar-right" method="POST" action="LoginController">
@@ -53,10 +57,11 @@
         <%
             }
         %>
-        <h1>Train Reservations</h1>
-        จองตั๋วรถไฟ <br><br>
-        (คุณสามารถขึ้นที่สถานีใดก็ได้ภายในจังหวัดนั้น) <br><br>
-        <h1>Register</h1>
+        <font color="white"><h1>Train Reservations</h1> </font>
+        
+       <font color="white">จองตั๋วรถไฟ <br><br></font> 
+        <font color="white">(คุณสามารถขึ้นที่สถานีใดก็ได้ภายในจังหวัดนั้น) <br><br></font>
+        <font color="#3371FF"><h1>Register</h1></font>
         <form class="form-inline" method="POST" action="RegisterController">
             <input type="text" class="form-control" name="firstname" placeholder="Firstname"> &nbsp;&nbsp;&nbsp;            
             <input type="text" class="form-control" name="lastname" placeholder="Lastname"><br><br> 

@@ -18,7 +18,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body>
+    <body> <center>
+        
+        <BODY background="images/tt.jpg"></BODY>
+        
+        
         <nav class="navbar navbar-inverse"> 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
@@ -41,20 +45,25 @@
                 String requestChange = request.getParameter("requestChange");
                 if (requestChange == null) {
         %>
-        <h1>My Profile</h1>
+        <font color="white"><br><br> <h1>My Profile</h1></font>
+        
         <form method="GET" action="RequestEditAccountControl" class="form-inline">
             <table border ="0">
                 <tr>
-                    <td>Firstname </td><td><input class="form-control" type="text" value="<%= passenger.getFirstname()%>" readonly></td>
+                    
+             <td><font color="white">Firstname </font></td><td><input class="form-control" type="text" value="<%= passenger.getFirstname()%>" readonly></td>
                 </tr>
                 <tr>
-                    <td>Lastname</td><td><input class="form-control" type="text" value="<%= passenger.getLastname()%>" readonly></td>
+                    
+             <td><font color="white">Lastname</font></td><td><input class="form-control" type="text" value="<%= passenger.getLastname()%>" readonly></td>
                 </tr>
                 <tr>
-                    <td>Email</td><td> <input class="form-control" type="text" value="<%= passenger.getEmail()%>" readonly></td>
+                    
+                    <td><font color="white">Email</font></td><td> <input class="form-control" type="text" value="<%= passenger.getEmail()%>" readonly></td>
                 </tr>
                 <tr>
-                    <td>Telephone</td><td> <input class="form-control" type="text" value="<%= passenger.getTelNo()%>" readonly></td>
+                    
+                    <td><font color="white">Telephone</font></td><td> <input class="form-control" type="text" value="<%= passenger.getTelNo()%>" readonly></td>
                 </tr>
             </table>
             <br>
@@ -78,20 +87,20 @@
         } else if (requestChange.equals("E#i!Ac6")) {
         %>
         <form method="POST" action="EditPassengerControl" class="form-inline">
-            <h1>My Profile</h1>
+            <font color="white"> <h1>My Profile</h1>  </font>
             <input type="text" name="id" value="<%= passenger.getPsgId()%>" hidden>
             <table border ="0">
                 <tr>
-                    <td>Firstname </td><td><input name="firstname" class="form-control" type="text" value="<%= passenger.getFirstname()%>"></td>
+                    <td><font color="white">Firstname </font></td><td><input name="firstname" class="form-control" type="text" value="<%= passenger.getFirstname()%>"></td>
                 </tr>
                 <tr>
-                    <td>Lastname</td><td><input name="lastname" class="form-control" type="text" value="<%= passenger.getLastname()%>"></td>
+                    <td><font color="white">Lastname </font></td><td><input name="lastname" class="form-control" type="text" value="<%= passenger.getLastname()%>"></td>
                 </tr>
                 <tr>
-                    <td>Email</td><td><input name="email" class="form-control" type="text" value="<%= passenger.getEmail()%>"></td>
+                    <td><font color="white">Email </font> </td><td><input name="email" class="form-control" type="text" value="<%= passenger.getEmail()%>"></td>
                 </tr>
                 <tr>
-                    <td>Telephone</td><td><input name="tel" class="form-control" type="text" value="<%= passenger.getTelNo()%>"><br></td>
+                    <td><font color="white">Telephone </font> </td><td><input name="tel" class="form-control" type="text" value="<%= passenger.getTelNo()%>"><br></td>
                 </tr>
             </table>
             <br>
@@ -102,18 +111,19 @@
         <%
         } else if (requestChange.equals("C!2ng99wd")) {
         %>
-        <h1>Change My Password</h1>
+        <font color="white"><h1>Change My Password</h1> </font> 
+        
         <form method="POST" action="ChangePwdController" class="form-inline">
             <input type="text" name="id" value="<%= passenger.getPsgId()%>" hidden>
             <table border="0">
                 <tr>
-                    <td>Old Password</td><td> <input name="oldpass" class="form-control" type="password" ></td>
+                    <td><font color="white"> Old Password</font> </td><td> <input name="oldpass" class="form-control" type="password" ></td>
                 </tr>
                 <tr>
-                    <td>New Password</td><td><input name="newpass" class="form-control" type="password" "></td>
+                    <td><font color="white"> New Password</font> </td><td><input name="newpass" class="form-control" type="password" "></td>
                 </tr>
                 <tr>
-                    <td>Confirm Password</td><td><input name="repass" class="form-control" type="password" value=""></td>
+                    <td><font color="white">Confirm Password </font> </td><td><input name="repass" class="form-control" type="password" value=""></td>
                 </tr>
             </table>
             <br>
@@ -139,6 +149,6 @@
 
             }
         %>
-
+        </center>
     </body>
 </html>
