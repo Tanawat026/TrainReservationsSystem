@@ -24,11 +24,11 @@
     </head>
     <body>
     <center>
-        <BODY background="images/tt1.jpg"></BODY>
+        <BODY background="images/tt1.jpg"></BODY> 
         <nav class="navbar navbar-inverse"> 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li> <a  class="navbar-brand" href="Home.jsp">Train Reservations</a> </li>
+                    <li> <a  class="navbar-brand" href="Home.jsp">Phuket Train Reservations</a> </li>
                     <li> <a  href="ProfilePage.jsp">Profile</a> </li>
                     <li> <a  href="TicketHistoryController" >History Ticket</a> </li>
                 </ul>
@@ -36,13 +36,10 @@
             </div>
         </nav>   
         <br>
-        <font color="white"><h1>Phuket Trains</h1></font>
-
-
-        <font color="white">จองตั๋วรถไฟ <br><br></font>
-
+        <font color="white"><h1>Phuket Train Reservations</h1> </font>
+        <font color="white">จองตั๋วรถไฟระหว่างจังหวัดภูเก็ต พังงา ระนอง สุราษฎร์ธานี ตรัง <br><br></font> 
         <font color="white">(คุณสามารถขึ้นที่สถานีใดก็ได้ภายในจังหวัดนั้น) <br><br></font>
-
+        <font color="white">บริการดี ราคาไม่แพง เพื่อคนใต้บ้านเรา <br><br></font>
 
         <form name="SearchTicket" action="TrainSearchController" class="form-inline" >
             <font color="white">สถานีต้นทาง</font> 
@@ -80,14 +77,14 @@
         %>
         <table class="table table-bordered" >
                 <tr>
-                    <td >ชื่อรถไฟ</td>
-                    <td>สถานีต้นทาง</td>
-                    <td>สถานีปลายทาง</td>
-                    <td>วันที่ออก</td>
-                    <td>เวลาออก</td> 
-                    <td>เวลาถึง</td>
-                    <td>ราคา(บาท)</td>
-                    <td>จอง</td>
+                    <td ><font color="white">ชื่อรถไฟ</font></td>
+                    <td><font color="white">สถานีต้นทาง</font></td>
+                    <td><font color="white">สถานีปลายทาง</font></td>
+                    <td><font color="white">วันที่ออก</font></td>
+                    <td><font color="white">เวลาออก</font></td> 
+                    <td><font color="white">เวลาถึง</font></td>
+                    <td><font color="white">ราคา(บาท)</font></td>
+                    <td><font color="white">จอง</font></td>
                 </tr>
             
                 <% 
@@ -108,13 +105,13 @@
                 <input type = "text"  name = "departuretime" value="<%= train.getDepartureTime() %>" hidden>
                 <input type = "text"  name = "arrivaltime" value="<%= train.getArrivalTime() %>" hidden>
                 <input type = "text"  name = "price" value="<%= traindetail.getPrice() %>" hidden>
-                <td ><% out.println(train.getTrainname()); %></td>
-                <td><% out.println(train.getFromLocation()); %></td>
-                <td><% out.println(train.getToLocation()); %></td>
-                <td><% out.println(traindetail.getDepartureDate()); %></td>
-                <td><% out.println(train.getDepartureTime()); %></td>
-                <td><% out.println(train.getArrivalTime()); %></td>
-                <td><% out.println(traindetail.getPrice()); %></td>
+                <td ><font color="white"><% out.println(train.getTrainname()); %></font></td>
+                <td><font color="white"><% out.println(train.getFromLocation()); %></font></td>
+                <td><font color="white"><% out.println(train.getToLocation()); %></font></td>
+                <td><font color="white"><% out.println(traindetail.getDepartureDate()); %></font></td>
+                <td><font color="white"><% out.println(train.getDepartureTime()); %></font></td>
+                <td><font color="white"><% out.println(train.getArrivalTime()); %></font></td>
+                <td><font color="white"><% out.println(traindetail.getPrice()); %></font></td>
                 <td><input type ="submit" class="btn btn-primary" name ="submit" value = "จองตั๋วโดยสาร"></td>   
             </form>
             </tr>

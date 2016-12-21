@@ -30,20 +30,25 @@
                 <p class="navbar-text navbar-right"><a  href="LogoutController" >Sign out</a> &nbsp;&nbsp;&nbsp;</p>
             </div>
         </nav>   
-        <h1> My History </h1>
+    <center>
+         <BODY background="images/tt1.jpg"></BODY> 
+         <font color="white">
+         <h1>My History Ticket</h1>
+        คุณสามารถยื่นบัตรประชาชนและเลขที่ตั๋วโดยสารแก่เจ้าหน้าที่เพื่อรับตั๋วของคุณที่สถานี
         <%
             List<Object[]> tkStory = (List<Object[]>) session.getAttribute("ticketHistory");
         %>
-        <table class="table table-striped">
-            <tr class="info">
-                <td>Ticket Number</td>
-                <td>Train Name</td>
-                <td>Departure Date</td>
-                <td>Origin</td>
-                <td>Destination</td>
-                <td>Departure Time</td>
-                <td>Arrival Time</td>
-                <td>Price</td>
+        <form name="History Ticket" class="form-inline">
+        <table  class="table table-bordered">
+            <tr>
+                <td>หมายเลขตั๋ว</td>
+                <td>ชื่อรถไฟ</td>
+                <td>วันที่ออก</td>
+                <td>ต้นทาง</td>
+                <td>ปลายทาง</td>
+                <td>เวลาออก</td>
+                <td>เวลาถึง</td>
+                <td>ราคา</td>
             </tr>
 
             <%
@@ -70,5 +75,7 @@
             }
         %>
         <br><a href="Home.jsp" class="btn btn-default">Back</a>
+        </form>
+    </center>
     </body>
 </html>

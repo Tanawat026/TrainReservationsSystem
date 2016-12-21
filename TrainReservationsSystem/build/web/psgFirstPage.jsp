@@ -51,10 +51,11 @@
         <%
             }
         %>
-        <font color="white"><h1>Train Reservations</h1> </font>
-
-        <font color="white">จองตั๋วรถไฟ <br><br></font> 
+       <font color="white"><h1>Phuket Train Reservations</h1> </font>
+        <font color="white">จองตั๋วรถไฟระหว่างจังหวัดภูเก็ต พังงา ระนอง สุราษฎร์ธานี ตรัง <br><br></font> 
         <font color="white">(คุณสามารถขึ้นที่สถานีใดก็ได้ภายในจังหวัดนั้น) <br><br></font>
+        <font color="white">บริการดี ราคาไม่แพง เพื่อคนใต้บ้านเรา <br><br></font>
+        
         <font color="#3371FF"><h1>Register</h1></font>
         <form class="form-inline" method="POST" action="RegisterController">
             <input type="text" class="form-control" name="firstname" placeholder="Firstname"> &nbsp;&nbsp;&nbsp;            
