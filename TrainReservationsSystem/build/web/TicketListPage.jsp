@@ -31,7 +31,7 @@
             </div>
         </nav>   
     <center>
-         <BODY background="images/tt1.jpg"></BODY> 
+         <BODY background="images/tt12.jpg"></BODY> 
          <font color="white">
          <h1>My History Ticket</h1>
         คุณสามารถยื่นบัตรประชาชนและเลขที่ตั๋วโดยสารแก่เจ้าหน้าที่เพื่อรับตั๋วของคุณที่สถานี

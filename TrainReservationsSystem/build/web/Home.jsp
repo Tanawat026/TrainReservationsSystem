@@ -24,7 +24,7 @@
     </head>
     <body>
     <center>
-        <BODY background="images/tt1.jpg"></BODY> 
+        <BODY background="images/tt12.jpg"></BODY> 
         <nav class="navbar navbar-inverse"> 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
@@ -75,7 +75,7 @@
                 }
                 if (trainSearchList != null) {
         %>
-        <table class="table table-bordered" >
+        <table class="table table-bordered" border="1">
                 <tr>
                     <td ><font color="white">ชื่อรถไฟ</font></td>
                     <td><font color="white">สถานีต้นทาง</font></td>
